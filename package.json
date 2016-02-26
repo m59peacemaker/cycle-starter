@@ -21,8 +21,8 @@
     "build:js": "browserify src/app.js | uglifyjs -cm > www/app.js",
     "dev-server": "m59-reload-server -p 8080 -d www",
     "setup-reload": "onchange 'www/**/!(*.js)' -- curl -X POST localhost:8080/reload?path={{changed}} 2> /dev/null",
-    "watch": "npm-run-all -p watch:html watch:js dev-server setup-reload",
-    "build": "npm-run-all -p html build:js",
+    "watch": "npm-run-all -s build-dir -p watch:html watch:js dev-server setup-reload",
+    "build": "npm-run-all -s build-dir -p html build:js",
     "test": "node test"
   },
   "browserify": {
