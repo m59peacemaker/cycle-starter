@@ -7,3 +7,4 @@
 /plugins
 /platforms
 *.log
+*.tmp
